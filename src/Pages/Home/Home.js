@@ -1,15 +1,16 @@
 import React from 'react';
+import Products from '../Products/Products';
 
 import Footer from '../Shared/Footer';
 import Banner from './Banner';
-import OurTools from './OurTools';
+
 import Testimonials from './Testimonials';
 
 const Home = () => {
     return (
         <div className='px-12'>
             <Banner></Banner>
-            <OurTools></OurTools>
+            <Products></Products>
             <Testimonials />
             <Footer></Footer>
         </div>

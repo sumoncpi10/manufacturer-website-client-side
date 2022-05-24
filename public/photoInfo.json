@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "category": "fashion",
+    "category": "hand",
     "name": "ULTRABOOST 22 SHOES",
     "seller": "Addidas",
     "price": 420,
@@ -14,7 +14,7 @@
   },
   {
     "id": "2",
-    "category": "fashion",
+    "category": "hand",
     "name": "LITE RACER ADAPT 3.0 SHOES",
     "seller": "Addidas",
     "price": 229,
@@ -79,7 +79,7 @@
   },
   {
     "id": "7",
-    "category": "fashion",
+    "category": "hand",
     "name": "LUNAR NEW YEAR ULTRABOOST DNA SHOES",
     "seller": "Addidas",
     "price": 196,
@@ -92,7 +92,7 @@
   },
   {
     "id": "8",
-    "category": "fashion",
+    "category": "hand",
     "name": "SUPERNOVA SHOES",
     "seller": "Addidas",
     "price": 245,
@@ -131,7 +131,7 @@
   },
   {
     "id": "11",
-    "category": "fashion",
+    "category": "hand",
     "name": "ZX 1K BOOST SHOES",
     "seller": "Addidas",
     "price": 319,
@@ -144,7 +144,7 @@
   },
   {
     "id": "12",
-    "category": "fashion",
+    "category": "hand",
     "name": "ZX 1K BOOST SHOES",
     "seller": "Addidas",
     "price": 319,
