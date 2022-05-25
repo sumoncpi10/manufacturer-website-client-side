@@ -47,7 +47,7 @@ const Products = () => {
 
                 </div>
             </div>
-            <Footer></Footer>
+
         </div>
 
     );

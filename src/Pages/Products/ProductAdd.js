@@ -63,31 +63,7 @@ const ProductAdd = () => {
                         {errors.category?.type === 'required' && <span className="label-text-alt text-red-500">{errors.category.message}</span>}
                     </label>
                 </div>
-                {/* <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Image URL </span>
-                    </label>
-                    <select
-                        {...register("category", {
-                            required: {
-                                value: true,
-                                message: 'Select Required'
-                            }
-                        })}
-                        type="text" name='category'
 
-                        class="select select-bordered w-full max-w-xs">
-                        <option disabled selected>Select Tools Category?</option>
-                        <option value='hand'>Hand Tools</option>
-                        <option value='cutting'>Cutting Tools</option>
-                        <option value='industrial'>Industrial Tools</option>
-                        <option value='precision'>Precision Tools</option>
-
-                    </select>
-                    <label className="label">
-                        {errors.category?.type === 'required' && <span className="label-text-alt text-red-500">{errors.category.message}</span>}
-                    </label>
-                </div> */}
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Product Name</span>

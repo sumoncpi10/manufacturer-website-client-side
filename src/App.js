@@ -7,6 +7,7 @@ import Products from './Pages/Products/Products';
 import Navbar from './Pages/Shared/Navbar';
 import RequireAuth from './Pages/Login/RequireAuth';
 import ProductAdd from './Pages/Products/ProductAdd';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import { ToastContainer } from 'react-toastify';
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
         <Route path='/product/addProduct' element={
           <RequireAuth>
             <ProductAdd></ProductAdd>
+          </RequireAuth>}>
+        </Route>
+        <Route path='/product/:id' element={
+          <RequireAuth>
+            <PlaceOrder />
           </RequireAuth>}>
         </Route>
         <Route path='/login' element={<Login />}></Route>
