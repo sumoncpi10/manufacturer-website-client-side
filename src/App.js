@@ -9,6 +9,15 @@ import RequireAuth from './Pages/Login/RequireAuth';
 import ProductAdd from './Pages/Products/ProductAdd';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import { ToastContainer } from 'react-toastify';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import MyReview from './Pages/Dashboard/MyReview';
+import MyHistory from './Pages/Dashboard/MyProfile';
+import NotFound from './Pages/NotFound/NotFound';
+import Users from './Pages/Dashboard/Users';
+import RequireAdmin from './Pages/Login/RequireAdmin';
+import MyProfile from './Pages/Dashboard/MyProfile';
+import Payment from './Pages/Dashboard/Payment';
 function App() {
   return (
     <div >
@@ -26,8 +35,16 @@ function App() {
             <PlaceOrder />
           </RequireAuth>}>
         </Route>
+        <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path="review" element={<MyReview></MyReview>}></Route>
+          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
+          <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+        </Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='/*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>

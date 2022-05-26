@@ -27,7 +27,7 @@ const PlaceOrder = () => {
                 // console.log(data)
                 setProduct(data);
                 setPrice(data.price);
-                setQuantity(data.minquantity)
+                setQuantity(data.minquantity);
             })
     }, []);
 
@@ -71,7 +71,7 @@ const PlaceOrder = () => {
 
     const onSubmit = async e => {
         // console.log(e)
-        const email = e.email;
+        const email = user.email;
         const clientName = e.clientname;
         const productID = product._id;
         const productName = product.name;
@@ -82,7 +82,8 @@ const PlaceOrder = () => {
         quantity = quantity ? quantity : product.minquantity;
         price = price ? price : product.price;
         const img = product.img;
-        const order = { email, clientName, productID, productName, address, zipCode, city, country, quantity, price, shipping, img };
+        const today = new Date(), date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        const order = { email, clientName, productID, productName, address, zipCode, city, country, quantity, price, shipping, img, date };
         console.log(order);
         fetch('http://localhost:5000/addorder', {
             method: 'POST',

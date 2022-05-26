@@ -10,7 +10,7 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
 
         <li tabindex="0">
-            <Link to='products'>Products</Link>
+            <Link to='/products'>Products</Link>
             <ul class="p-2">
                 <li className="btn btn-primary" data-filter=".gts"><Link to='/products/hand'>Hand Tools</Link></li>
                 <li className="btn btn-primary" data-filter=".lap"><Link to='/products/tour'>Cutting Tools</Link></li>
@@ -18,9 +18,13 @@ const Navbar = () => {
                 <li className="btn btn-primary" data-filter=".lap"><Link to='/products/fashion'>Precision Tools</Link></li>
             </ul>
         </li>
-        <li><Link to='review'>Review</Link></li>
-        <li><Link to='contact'>Contact</Link></li>
-        <li><Link to='about'>About</Link></li>
+        {
+            user && <li><Link to='/dashboard'>Dashboard</Link></li>
+        }
+
+        <li><Link to='/review'>Review</Link></li>
+        <li><Link to='/contact'>Contact</Link></li>
+        <li><Link to='/about'>About</Link></li>
     </>;
 
     const logout = () => {
@@ -86,7 +90,7 @@ const Navbar = () => {
                                 <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                     <li>
                                         <a class="justify-between">
-                                            Profile
+                                            {user?.displayName}
                                             <span class="badge">New</span>
                                         </a>
                                     </li>
