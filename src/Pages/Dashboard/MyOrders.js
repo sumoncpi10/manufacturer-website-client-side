@@ -11,7 +11,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?email=${user?.email}`)
+            fetch(`https://ancient-sierra-92602.herokuapp.com/order?email=${user?.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setOrders(data);
@@ -24,7 +24,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are You Sure You Want To Delete The Order!');
         console.log(order)
         if (proceed) {
-            fetch(`http://localhost:5000/order/${order._id}`, {
+            fetch(`https://ancient-sierra-92602.herokuapp.com/order/${order._id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

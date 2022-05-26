@@ -18,6 +18,8 @@ import Users from './Pages/Dashboard/Users';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
+import About from './Pages/About/About';
+import Blogs from './Pages/Blogs/Blogs';
 function App() {
   return (
     <div >
@@ -42,6 +44,8 @@ function App() {
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
         </Route>
+        <Route path='/blogs' element={<Blogs />}></Route>
+        <Route path='/about' element={<About />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>

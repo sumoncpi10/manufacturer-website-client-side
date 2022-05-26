@@ -1,21 +1,21 @@
-// import { Elements } from '@stripe/react-stripe-js';
-// import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../Shared/Loading';
-// import CheckoutForm from './CheckoutForm';
+import CheckoutForm from './CheckoutForm';
 
-// const stripePromise = loadStripe('pk_test_51KzgdMJVa6zVY99CaGts94G8qqJirQWPMAET7VBqrec0wWSxhuuRtgQNPA3SuwzjQKOv6QWwjgMWEfZ83N1qLNUU00IX1ciL6e');
+const stripePromise = loadStripe('pk_test_51L3iGjFfyC4fpy8FXJArlMZa8ahCPrKdLa50mZViHH45oLPkeqOtAvG3MNuXVjNjO9IK8AMzlp8Ks51F55mVNeWF00rSKa5Xu5');
 
 const Payment = () => {
     const { id } = useParams();
     const [order, setOrder] = useState([]);
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://ancient-sierra-92602.herokuapp.com/order/${id}`;
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/order/${id}`)
+        fetch(`https://ancient-sierra-92602.herokuapp.com/order/${id}`)
             .then(res => res.json())
             .then(data => {
                 setOrder(data);
@@ -38,9 +38,9 @@ const Payment = () => {
             </div>
             <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
                 <div class="card-body">
-                    {/* <Elements stripe={stripePromise}>
-                        <CheckoutForm appointment={appointment} />
-                    </Elements> */}
+                    <Elements stripe={stripePromise}>
+                        <CheckoutForm order={order} />
+                    </Elements>
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@ const ProductAdd = () => {
         // console.log(name, email, password);
         const product = { name, brand, price, quantity, minquantity, img, description, supplier, category };
         // send data to the server 
-        fetch('http://localhost:5000/productAdd', {
+        fetch('https://ancient-sierra-92602.herokuapp.com/productAdd', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
