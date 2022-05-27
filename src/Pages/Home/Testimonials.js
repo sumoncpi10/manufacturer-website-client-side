@@ -13,7 +13,7 @@ const Testimonials = () => {
     const path = window.location.pathname;
     useEffect(() => {
         if (user && path.includes('testimonials')) {
-            fetch(`http://localhost:5000/reviewsall`)
+            fetch(`https://ancient-sierra-92602.herokuapp.com/reviewsall`)
                 .then(res => res.json())
                 .then(data => {
                     setReviews(data);
@@ -22,7 +22,7 @@ const Testimonials = () => {
 
         }
         else if (user && !path.includes('testimonials')) {
-            fetch(`http://localhost:5000/reviews`)
+            fetch(`https://ancient-sierra-92602.herokuapp.com/reviews`)
                 .then(res => res.json())
                 .then(data => {
                     setReviews(data);

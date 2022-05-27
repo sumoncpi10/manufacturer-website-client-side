@@ -13,7 +13,7 @@ const MyOrders = () => {
     const path = window.location.pathname;
     useEffect(() => {
         if (user && path.includes('manageOrder')) {
-            fetch(`http://localhost:5000/orders`)
+            fetch(`https://ancient-sierra-92602.herokuapp.com/orders`)
                 .then(res => res.json())
                 .then(data => {
                     setOrders(data);
@@ -22,7 +22,7 @@ const MyOrders = () => {
 
         }
         else if (user && !path.includes('manageOrder')) {
-            fetch(`http://localhost:5000/order?email=${user?.email}`)
+            fetch(`https://ancient-sierra-92602.herokuapp.com/order?email=${user?.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setOrders(data);
@@ -65,7 +65,7 @@ const MyOrders = () => {
             order: order?._id,
             // transactionId: paymentIntent.id
         }
-        fetch(`http://localhost:5000/delivered/${order?._id}`, {
+        fetch(`https://ancient-sierra-92602.herokuapp.com/delivered/${order?._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
