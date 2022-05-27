@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+
 import quote from '../../assets/icons/quote.svg';
 
 import Review from './Review';
