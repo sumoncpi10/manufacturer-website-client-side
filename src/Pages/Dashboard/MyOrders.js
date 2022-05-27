@@ -122,7 +122,7 @@ const MyOrders = () => {
                                 <td>{a.shipping + (a.price * a.quantity)}</td>
                                 <td>
                                     {(a.price && !a.paid && !path.includes('manageOrder')) && <Link to={`/dashboard/payment/${a._id}`}> <button class="btn btn-xs">Pay</button></Link>}
-                                    {(a.price && !a.paid && path.includes('manageOrder')) && <button class="btn btn-xs">Not Pay yet</button>}
+                                    {(a.price && !a.paid && path.includes('manageOrder')) && <button class="btn btn-xs">Unpaid</button>}
                                     {(a.price && a.paid && !a.delivered) && <button class="btn btn-xs btn-primary">Processing</button>}
                                     {(a.price && a.paid && a.delivered) && <button class="btn btn-xs btn-primary">Shipped</button>}
                                 </td>
@@ -136,8 +136,8 @@ const MyOrders = () => {
                                             {(admin && path.includes('manageOrder') && a.price && a.paid && !a.delivered) && <button class="btn btn-xs btn-success" onClick={() => handleDeliveredProduct(a)}>Click To Delivered</button>}
                                             {(admin && path.includes('manageOrder') && a.price && a.paid && a.delivered) && <button class="btn btn-xs btn-success" onClick={() => handleDeliveredProduct(a)}>Delivered</button>}
 
-                                            {(a.price && !a.paid && !path.includes('manageOrder')) && <button className='border-0 rounded-circle delete-button  p-2' onClick={() => handleRemoveProduct(a)} ><FontAwesomeIcon className='delete-icon' icon={faTrashAlt}></FontAwesomeIcon></button>}
-                                            {(a.price && !a.paid && path.includes('manageOrder')) && <button class="btn btn-xs btn-secondary">Order placed</button>}
+                                            {(a.price && !a.paid) && <button className='border-0 rounded-circle delete-button  p-2' onClick={() => handleRemoveProduct(a)} ><FontAwesomeIcon className='delete-icon' icon={faTrashAlt}></FontAwesomeIcon></button>}
+                                            {/* {(a.price && !a.paid && path.includes('manageOrder')) && <button class="btn btn-xs btn-secondary">Order placed</button>} */}
                                         </div>
                                         :
                                         ''

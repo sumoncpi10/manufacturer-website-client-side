@@ -9,6 +9,9 @@ const MyPortfolio = () => {
                 <div class="max-w-md">
                     <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
                     <h1 class="mb-5 text-5xl font-bold text-gray-900">I am Md. Dawdujjaman Sumon </h1>
+                    <p class="mb-5 text-4xl font-bold ">Email:<span className='text-stone-400'>sumoncpi10@gmail.com</span> </p>
+                    <p class="mb-5 text-4xl font-bold ">Educational Background:<span className='text-stone-400'>Diploma in CSE & BSC in CSE Running</span> </p>
+                    <p class="mb-5 text-4xl font-bold ">My Skills:<span className='text-stone-400'> REACT, MongoDB, Mysql, HTML, CSS ETC</span> </p>
                     <h6 class="mb-5 text-2xl ">Here is my Projects Below </h6>
                     {/* <h6 class="mb-5 text-2xl "><Link to='https://atz-manufacturing.web.app' target="_blank">Tools Manufacturing Website</Link></h6> */}
                     <h6 class="mb-5 text-2xl text-secondary"><a rel="noopener noreferrer" href="https://atz-manufacturing.web.app" target="_blank">1. Tools Manufacturing Website</a></h6>
