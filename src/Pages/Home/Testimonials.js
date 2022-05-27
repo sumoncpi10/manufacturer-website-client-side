@@ -9,10 +9,10 @@ import Review from './Review';
 const Testimonials = () => {
 
     const [reviews, setReviews] = useState([]);
-    const [user] = useAuthState(auth);
+
     const path = window.location.pathname;
     useEffect(() => {
-        if (user && path.includes('testimonials')) {
+        if (path.includes('testimonials')) {
             fetch(`https://ancient-sierra-92602.herokuapp.com/reviewsall`)
                 .then(res => res.json())
                 .then(data => {
@@ -21,7 +21,7 @@ const Testimonials = () => {
                 });
 
         }
-        else if (user && !path.includes('testimonials')) {
+        else if (!path.includes('testimonials')) {
             fetch(`https://ancient-sierra-92602.herokuapp.com/reviews`)
                 .then(res => res.json())
                 .then(data => {
