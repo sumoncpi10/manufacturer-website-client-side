@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, email } = order;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://ancient-sierra-92602.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
