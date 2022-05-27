@@ -4,14 +4,16 @@ import auth from '../../firebase.init';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import useAdmin from '../../hooks/useAdmin';
 const MyOrders = () => {
 
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
-
+    const [admin] = useAdmin(user);
+    const path = window.location.pathname;
     useEffect(() => {
-        if (user) {
-            fetch(`https://ancient-sierra-92602.herokuapp.com/order?email=${user?.email}`)
+        if (user && path.includes('manageOrder')) {
+            fetch(`http://localhost:5000/orders`)
                 .then(res => res.json())
                 .then(data => {
                     setOrders(data);
@@ -19,7 +21,15 @@ const MyOrders = () => {
                 });
 
         }
-    }, [user]);
+        else if (user && !path.includes('manageOrder')) {
+            fetch(`http://localhost:5000/order?email=${user?.email}`)
+                .then(res => res.json())
+                .then(data => {
+                    setOrders(data);
+                    console.log(data)
+                });
+        }
+    }, [path]);
     const handleRemoveProduct = order => {
         const proceed = window.confirm('Are You Sure You Want To Delete The Order!');
         console.log(order)
@@ -35,6 +45,39 @@ const MyOrders = () => {
             setOrders(rest);
             // removeFromDb(product.id);
         }
+    }
+    const handleDeliveredProduct = order => {
+        const proceed = window.confirm('Are You Sure You Want To Delete The Order!');
+        console.log(order)
+        // if (proceed) {
+        //     fetch(`https://ancient-sierra-92602.herokuapp.com/order/${order._id}`, {
+        //         method: 'DELETE'
+        //     })
+        //         .then(res => res.json())
+        //         .then(data => console.log(data))
+
+        //     const rest = orders.filter(pd => pd._id !== order._id);
+        //     // console.log(rest);
+        //     setOrders(rest);
+        //     // removeFromDb(product.id);
+        // }
+        const delivered = {
+            order: order?._id,
+            // transactionId: paymentIntent.id
+        }
+        fetch(`http://localhost:5000/delivered/${order?._id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(delivered)
+        }).then(res => res.json())
+            .then(data => {
+                // setProcessing(false);
+                console.log(data);
+            })
+
     }
     return (
         <div>
@@ -52,7 +95,8 @@ const MyOrders = () => {
                             <th>Shipping</th>
                             <th>Sub Total</th>
                             <th>Payment</th>
-                            <th>Cancel Order</th>
+                            {path.includes('manageOrder') ? <th>Status</th> : <th>Cancel Order</th>}
+
 
                         </tr>
                     </thead>
@@ -77,13 +121,23 @@ const MyOrders = () => {
                                 <td>{a.shipping}</td>
                                 <td>{a.shipping + (a.price * a.quantity)}</td>
                                 <td>
-                                    {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}> <button class="btn btn-xs">Pay</button></Link>}
-                                    {(a.price && a.paid) && <button class="btn btn-xs">Paid</button>}
+                                    {(a.price && !a.paid && !path.includes('manageOrder')) && <Link to={`/dashboard/payment/${a._id}`}> <button class="btn btn-xs">Pay</button></Link>}
+                                    {(a.price && !a.paid && path.includes('manageOrder')) && <button class="btn btn-xs">Not Pay yet</button>}
+                                    {(a.price && a.paid && !a.delivered) && <button class="btn btn-xs btn-primary">Processing</button>}
+                                    {(a.price && a.paid && a.delivered) && <button class="btn btn-xs btn-primary">Shipped</button>}
                                 </td>
                                 <td>{
                                     user?.email ?
                                         <div className='d-flex align-items-center pe-3 '>
-                                            <button className='border-0 rounded-circle delete-button  p-2' onClick={() => handleRemoveProduct(a)} ><FontAwesomeIcon className='delete-icon' icon={faTrashAlt}></FontAwesomeIcon></button>
+                                            {(admin && !path.includes('manageOrder') && a.price && a.paid) && <button class="btn btn-xs btn-secondary">Confirmed</button>}
+
+                                            {(!admin && a.price && a.paid) && <button class="btn btn-xs btn-secondary">Confirmed</button>}
+
+                                            {(admin && path.includes('manageOrder') && a.price && a.paid && !a.delivered) && <button class="btn btn-xs btn-success" onClick={() => handleDeliveredProduct(a)}>Click To Delivered</button>}
+                                            {(admin && path.includes('manageOrder') && a.price && a.paid && a.delivered) && <button class="btn btn-xs btn-success" onClick={() => handleDeliveredProduct(a)}>Delivered</button>}
+
+                                            {(a.price && !a.paid && !path.includes('manageOrder')) && <button className='border-0 rounded-circle delete-button  p-2' onClick={() => handleRemoveProduct(a)} ><FontAwesomeIcon className='delete-icon' icon={faTrashAlt}></FontAwesomeIcon></button>}
+                                            {(a.price && !a.paid && path.includes('manageOrder')) && <button class="btn btn-xs btn-secondary">Order placed</button>}
                                         </div>
                                         :
                                         ''
@@ -93,73 +147,6 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
-
-
-
-            {/* <div class="overflow-x-auto w-full">
-                <table class="table w-full">
-
-                    <thead>
-                        <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" class="checkbox" />
-                                </label>
-                            </th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" class="checkbox" />
-                                </label>
-                            </th>
-                            <td>
-                                <div class="flex items-center space-x-3">
-                                    <div class="avatar">
-                                        <div class="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="font-bold">Hart Hagerty</div>
-                                        <div class="text-sm opacity-50">United States</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Zemlak, Daniel and Leannon
-                                <br />
-                                <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                            </td>
-                            <td>Purple</td>
-                            <th>
-                                <button class="btn btn-ghost btn-xs">details</button>
-                            </th>
-                        </tr>
-
-                    </tbody>
-
-                    <tfoot>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
-                        </tr>
-                    </tfoot>
-
-                </table>
-            </div> */}
-
-
 
 
 

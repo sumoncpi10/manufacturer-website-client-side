@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import footer from '../../assets/images/footer.png';
 const Footer = () => {
     return (
@@ -8,18 +9,19 @@ const Footer = () => {
                 backgroundSize: 'cover'
             }} class="footer p-10 text-base-content">
                 <div>
-                    <span class="footer-title">Services</span>
-                    <a class="link link-hover">Branding</a>
-                    <a class="link link-hover">Design</a>
-                    <a class="link link-hover">Marketing</a>
-                    <a class="link link-hover">Advertisement</a>
+                    <span class="footer-title">Products</span>
+                    <Link to='/products/hand'>Hand Tools</Link>
+                    <Link to='/products/tour'>Cutting Tools</Link>
+                    <Link to='/products/fashion'>Industrial Tools</Link>
+                    <Link to='/products/fashion'>Precision Tools</Link>
                 </div>
                 <div>
                     <span class="footer-title">Company</span>
-                    <a class="link link-hover">About us</a>
-                    <a class="link link-hover">Contact</a>
-                    <a class="link link-hover">Jobs</a>
-                    <a class="link link-hover">Press kit</a>
+                    <Link to='/about'>About</Link>
+                    <Link to='/contact'>Contact</Link>
+                    <Link to='/blogs'>Blogs</Link>
+                    <Link to='/testimonials'>Review</Link>
+                    <Link to='/portfolio'>My Portfolio</Link>
                 </div>
                 <div>
                     <span class="footer-title">Legal</span>

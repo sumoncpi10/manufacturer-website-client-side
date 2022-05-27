@@ -223,35 +223,7 @@ const ProductAdd = () => {
 
                 <input className='btn w-full max-w-xs text-white' type="submit" value="Add Product" />
             </form>
-            {/* 
-            <form onSubmit={onSubmit}>
-                <div class="d-flex flex-column justify-content-center mx-auto">
-                    <div class="row mb-2">
-                        <input type="text" name='name' class="form-control" placeholder="Product name" />
-                    </div>
-                    <div class="row mb-2">
-                        <input type="text" name='brand' class="form-control" placeholder="Brand name" />
-                    </div>
-                    <div class="row mb-2">
-                        <input type="text" name='supplier' class="form-control" placeholder="Supplier name" />
-                    </div>
-                    <div class="row mb-2">
-                        <input type="textarea" name='description' class="form-control" placeholder="Description" />
-                        <textarea type="text" name='description' class="form-control" placeholder="Description"></textarea>
-                    </div>
-                    <div class="row mb-2">
-                        <input type="text" name='price' class="form-control" placeholder="Unit Price" />
-                    </div>
-                    <div class="row mb-2">
-                        <input type="text" name='quantity' class="form-control" placeholder="Quantity" />
-                    </div>
-                    <div class="row mb-2">
-                        <input type="text" name='img' class="form-control" placeholder="Img Url" />
-                    </div>
-                </div>
-                <button class="btn btn-primary m-3" type="submit">Add Product</button>
-            </form>
-             */}
+
         </div >
     );
 };

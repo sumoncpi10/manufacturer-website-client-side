@@ -20,6 +20,9 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
 import About from './Pages/About/About';
 import Blogs from './Pages/Blogs/Blogs';
+import MyPortfolio from './MyPortfolio/MyPortfolio';
+import Testimonials from './Pages/Home/Testimonials';
+import Footer from './Pages/Shared/Footer';
 function App() {
   return (
     <div >
@@ -42,15 +45,19 @@ function App() {
           <Route path="review" element={<MyReview></MyReview>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
+          <Route path="manageOrder" element={<MyOrders></MyOrders>}></Route>
           <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
         </Route>
+        <Route path='/testimonials' element={<Testimonials />}></Route>
         <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/about' element={<About />}></Route>
+        <Route path='/portfolio' element={<MyPortfolio />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
+      <Footer></Footer>
     </div>
   );
 }
