@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L3iGjFfyC4fpy8FXJArlMZa8ahCPrKdLa50m
 const Payment = () => {
     const { id } = useParams();
     const [order, setOrder] = useState([]);
-    const url = `https://ancient-sierra-92602.herokuapp.com/order/${id}`;
+
 
     useEffect(() => {
 
@@ -19,7 +19,7 @@ const Payment = () => {
             .then(res => res.json())
             .then(data => {
                 setOrder(data);
-                console.log(data)
+                // console.log(data)
             });
 
 
