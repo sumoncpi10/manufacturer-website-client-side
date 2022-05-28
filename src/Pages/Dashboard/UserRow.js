@@ -31,8 +31,8 @@ const UserRow = ({ user, handleRemoveUser }) => {
         <tr>
             <th>1</th>
             <td>{email}</td>
-            <td>{role !== 'admin' ? <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button> : <button class="btn btn-xs btn-primary text-center">Admin</button>}</td>
-            <td><button onClick={() => handleRemoveUser(user)} class="btn btn-xs">Remove User</button></td>
+            <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button> : <button className="btn btn-xs btn-primary text-center">Admin</button>}</td>
+            <td><button onClick={() => handleRemoveUser(user)} className="btn btn-xs">Remove User</button></td>
         </tr>
     );
 };

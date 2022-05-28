@@ -39,12 +39,12 @@ const MyReview = () => {
         <div className=''>
             <h1 className='text-center text-4xl text-primary'>Add A Review</h1>
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center'>
-                <div class="form-control w-full max-w-xs">
-                    <label class="label">
-                        <span class="label-text">Category</span>
+                <div className="form-control w-full max-w-xs">
+                    <label className="label">
+                        <span className="label-text">Category</span>
 
                     </label>
-                    <select class="select select-bordered"
+                    <select className="select select-bordered"
                         {...register("category", {
                             required: {
                                 value: true,
@@ -57,8 +57,8 @@ const MyReview = () => {
                         <option value='industrial'>Industrial Tools</option>
                         <option value='precision'>Precision Tools</option>
                     </select>
-                    <label class="label">
-                        {/* <span class="label-text-alt">Alt label</span> */}
+                    <label className="label">
+                        {/* <span className="label-text-alt">Alt label</span> */}
                         {errors.category?.type === 'required' && <span className="label-text-alt text-red-500">{errors.category.message}</span>}
                     </label>
                 </div>

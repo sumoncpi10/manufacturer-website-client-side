@@ -26,13 +26,13 @@ const MyOrders = () => {
                 .then(res => res.json())
                 .then(data => {
                     setOrders(data);
-                    console.log(data)
+                    // console.log(data)
                 });
         }
     }, [path]);
     const handleRemoveProduct = order => {
         const proceed = window.confirm('Are You Sure You Want To Delete The Order!');
-        console.log(order)
+        // console.log(order)
         if (proceed) {
             fetch(`https://ancient-sierra-92602.herokuapp.com/order/${order._id}`, {
                 method: 'DELETE'
@@ -82,8 +82,8 @@ const MyOrders = () => {
     return (
         <div>
             <h2>My Orders: {orders.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -102,12 +102,12 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((a, index) => <tr>
+                            orders.map((a, index) => <tr key={a._id}>
                                 <th>{index + 1}</th>
                                 <td>
-                                    <div class="flex items-center space-x-3">
-                                        <div class="avatar">
-                                            <div class="mask mask-squircle w-12 h-12">
+                                    <div className="flex items-center space-x-3">
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-12 h-12">
                                                 <img src={a.img} />
                                             </div>
                                         </div>
@@ -121,23 +121,23 @@ const MyOrders = () => {
                                 <td>{a.shipping}</td>
                                 <td>{a.shipping + (a.price * a.quantity)}</td>
                                 <td>
-                                    {(a.price && !a.paid && !path.includes('manageOrder')) && <Link to={`/dashboard/payment/${a._id}`}> <button class="btn btn-xs">Pay</button></Link>}
-                                    {(a.price && !a.paid && path.includes('manageOrder')) && <button class="btn btn-xs">Unpaid</button>}
-                                    {(a.price && a.paid && !a.delivered) && <button class="btn btn-xs btn-primary">Processing</button>}
-                                    {(a.price && a.paid && a.delivered) && <button class="btn btn-xs btn-primary">Shipped</button>}
+                                    {(a.price && !a.paid && !path.includes('manageOrder')) && <Link to={`/dashboard/payment/${a._id}`}> <button className="btn btn-xs">Pay</button></Link>}
+                                    {(a.price && !a.paid && path.includes('manageOrder')) && <button className="btn btn-xs">Unpaid</button>}
+                                    {(a.price && a.paid && !a.delivered) && <button className="btn btn-xs btn-primary">Processing</button>}
+                                    {(a.price && a.paid && a.delivered) && <button className="btn btn-xs btn-primary">Shipped</button>}
                                 </td>
                                 <td>{
                                     user?.email ?
                                         <div className='d-flex align-items-center pe-3 '>
-                                            {(admin && !path.includes('manageOrder') && a.price && a.paid) && <button class="btn btn-xs btn-secondary">Confirmed</button>}
+                                            {(admin && !path.includes('manageOrder') && a.price && a.paid) && <button className="btn btn-xs btn-secondary">Confirmed</button>}
 
-                                            {(!admin && a.price && a.paid) && <button class="btn btn-xs btn-secondary">Confirmed</button>}
+                                            {(!admin && a.price && a.paid) && <button className="btn btn-xs btn-secondary">Confirmed</button>}
 
-                                            {(admin && path.includes('manageOrder') && a.price && a.paid && !a.delivered) && <button class="btn btn-xs btn-success" onClick={() => handleDeliveredProduct(a)}>Click To Delivered</button>}
-                                            {(admin && path.includes('manageOrder') && a.price && a.paid && a.delivered) && <button class="btn btn-xs btn-success" onClick={() => handleDeliveredProduct(a)}>Delivered</button>}
+                                            {(admin && path.includes('manageOrder') && a.price && a.paid && !a.delivered) && <button className="btn btn-xs btn-success" onClick={() => handleDeliveredProduct(a)}>Click To Delivered</button>}
+                                            {(admin && path.includes('manageOrder') && a.price && a.paid && a.delivered) && <button className="btn btn-xs btn-success" onClick={() => handleDeliveredProduct(a)}>Delivered</button>}
 
                                             {(a.price && !a.paid) && <button className='border-0 rounded-circle delete-button  p-2' onClick={() => handleRemoveProduct(a)} ><FontAwesomeIcon className='delete-icon' icon={faTrashAlt}></FontAwesomeIcon></button>}
-                                            {/* {(a.price && !a.paid && path.includes('manageOrder')) && <button class="btn btn-xs btn-secondary">Order placed</button>} */}
+                                            {/* {(a.price && !a.paid && path.includes('manageOrder')) && <button className="btn btn-xs btn-secondary">Order placed</button>} */}
                                         </div>
                                         :
                                         ''

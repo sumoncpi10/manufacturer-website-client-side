@@ -39,7 +39,7 @@ const Products = () => {
                 <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-4">
                     {
                         // photos?.filter(photo => path.includes(photo.category) ? <h1>hi</h1> : '')
-                        tools?.map(tool => <Tool key={tool.id} tool={tool} ></Tool>)
+                        tools?.map(tool => <Tool key={tool._id} tool={tool} ></Tool>)
                     }
                     {
                         path === '/products' ? '' : tools.length > 12 ? (<Link to='/products'><button type="button" className="btn btn-dark m-4 btn-show ">Show More</button></Link>) : ""

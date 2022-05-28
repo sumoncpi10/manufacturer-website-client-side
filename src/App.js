@@ -12,7 +12,6 @@ import { ToastContainer } from 'react-toastify';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MyReview from './Pages/Dashboard/MyReview';
-import MyHistory from './Pages/Dashboard/MyProfile';
 import NotFound from './Pages/NotFound/NotFound';
 import Users from './Pages/Dashboard/Users';
 import RequireAdmin from './Pages/Login/RequireAdmin';

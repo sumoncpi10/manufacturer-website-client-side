@@ -273,13 +273,13 @@ const PlaceOrder = () => {
 
 
 
-                <div class="overflow-x-auto w-full">
-                    <table class="table w-full">
+                <div className="overflow-x-auto w-full">
+                    <table className="table w-full">
                         <tbody>
                             <tr>
                                 {/* <th>
                                 <label>
-                                    <input type="checkbox" class="checkbox" />
+                                    <input type="checkbox" className="checkbox" />
                                 </label>
                             </th> */}
                                 <th></th>
@@ -291,36 +291,36 @@ const PlaceOrder = () => {
                             <tr>
                                 <th>
                                     <label>
-                                        <input type="checkbox" class="checkbox" />
+                                        <input type="checkbox" className="checkbox" />
                                     </label>
                                 </th>
                                 <td>
-                                    <div class="flex items-center space-x-3">
-                                        <div class="avatar">
-                                            <div class="mask mask-squircle w-12 h-12">
+                                    <div className="flex items-center space-x-3">
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-12 h-12">
                                                 <img src={product.img} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="font-bold">{product.name}</div>
+                                            <div className="font-bold">{product.name}</div>
                                             <p className='text-1xl'> <span className='text-red-500'>Min Order Qty:</span> {product.minquantity}</p>
                                             <p className='text-1xl'> <span className='text-indigo-500'>Available Quentity:</span> {product.quantity}</p>
-                                            {/* <div class="text-sm opacity-50">United States</div> */}
+                                            {/* <div className="text-sm opacity-50">United States</div> */}
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     {product.price}
                                     <br />
-                                    <span class="badge badge-ghost badge-sm">Per unit</span>
+                                    <span className="badge badge-ghost badge-sm">Per unit</span>
                                 </td>
-                                <td class="product-quantity " data-title="Quantity">
+                                <td className="product-quantity " data-title="Quantity">
                                     <button onClick={handleQuantityMinus}> - </button>
                                     <input className='  w-12' type="text" value={quantity} />
                                     <button onClick={handleQuantityPlus}> + </button>
                                 </td>
                                 <th>
-                                    <button class="btn btn-ghost btn-xs">${price * quantity}</button>
+                                    <button className="btn btn-ghost btn-xs">${price * quantity}</button>
                                 </th>
                             </tr>
                             <tr className='bg-white'>
