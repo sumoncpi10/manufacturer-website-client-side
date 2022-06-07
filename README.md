@@ -1,6 +1,6 @@
 # ATZ Manufacturing
 
-This project was bootstrapped with React && MongoDB [Live Site ATZ Manufacturing](https://atz-manufacturing.web.app/).
+This project was Build with React, DaisyUI && MongoDB [Live Site ATZ Manufacturing](https://atz-manufacturing.web.app/).
 
 
 
