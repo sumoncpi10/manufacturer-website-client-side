@@ -11,4 +11,3 @@ This is a Tools Manufacturing website. Here an organization can do all their wor
 <li>This is Develop using React, MongoDB, Node JS && Bootstrap, JWT, Stripe, DaisyUI</li>
 <li>There All Data Loaded Dynamically</li>
 <li>Basically This is a Simple Website for Tools manufacturing</li>
-<li>It Can be used for any Kind of products</li>
