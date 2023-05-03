@@ -10,7 +10,7 @@ const Testimonials = () => {
     const path = window.location.pathname;
     useEffect(() => {
         if (path.includes('testimonials')) {
-            fetch(`https://ancient-sierra-92602.herokuapp.com/reviewsall`)
+            fetch(`https://manufacturer-website-lea9.onrender.com/reviewsall`)
                 .then(res => res.json())
                 .then(data => {
                     setReviews(data);
@@ -19,7 +19,7 @@ const Testimonials = () => {
 
         }
         else if (!path.includes('testimonials')) {
-            fetch(`https://ancient-sierra-92602.herokuapp.com/reviews`)
+            fetch(`https://manufacturer-website-lea9.onrender.com/reviews`)
                 .then(res => res.json())
                 .then(data => {
                     setReviews(data);

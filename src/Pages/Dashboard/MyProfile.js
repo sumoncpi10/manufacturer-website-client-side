@@ -11,7 +11,7 @@ const MyProfile = () => {
     const [token, setToken] = useState('');
     useEffect(() => {
         if (user) {
-            fetch(`https://ancient-sierra-92602.herokuapp.com/user/${user?.email}`)
+            fetch(`https://manufacturer-website-lea9.onrender.com/user/${user?.email}`)
                 .then(res => res.json())
                 .then(data => {
                     // console.log(data);
@@ -36,7 +36,7 @@ const MyProfile = () => {
 
         // send data to the server
         if (email) {
-            fetch(`https://ancient-sierra-92602.herokuapp.com/user/${email}`, {
+            fetch(`https://manufacturer-website-lea9.onrender.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

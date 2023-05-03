@@ -19,7 +19,7 @@ const MyReview = () => {
         // console.log(name, email, password);
         const review = { category, productName, reviewDetails, reviewedBy, userImg };
         // send data to the server 
-        fetch('https://ancient-sierra-92602.herokuapp.com/reviewAdd', {
+        fetch('https://manufacturer-website-lea9.onrender.com/reviewAdd', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

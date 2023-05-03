@@ -21,7 +21,7 @@ const PlaceOrder = () => {
 
     let signInError;
     useEffect(() => {
-        fetch(`https://ancient-sierra-92602.herokuapp.com/product/${params.id}`)
+        fetch(`https://manufacturer-website-lea9.onrender.com/product/${params.id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
@@ -85,7 +85,7 @@ const PlaceOrder = () => {
         const today = new Date(), date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         const order = { email, clientName, productID, productName, address, zipCode, city, country, quantity, price, shipping, img, date };
         console.log(order);
-        fetch('https://ancient-sierra-92602.herokuapp.com/addorder', {
+        fetch('https://manufacturer-website-lea9.onrender.com/addorder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

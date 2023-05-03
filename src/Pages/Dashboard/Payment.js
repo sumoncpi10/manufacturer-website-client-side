@@ -15,7 +15,7 @@ const Payment = () => {
 
     useEffect(() => {
 
-        fetch(`https://ancient-sierra-92602.herokuapp.com/order/${id}`)
+        fetch(`https://manufacturer-website-lea9.onrender.com/order/${id}`)
             .then(res => res.json())
             .then(data => {
                 setOrder(data);

@@ -15,7 +15,7 @@ const CheckoutForm = ({ order }) => {
 
     useEffect(() => {
         if (price) {
-            fetch('https://ancient-sierra-92602.herokuapp.com/create-payment-intent', {
+            fetch('https://manufacturer-website-lea9.onrender.com/create-payment-intent', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -85,7 +85,7 @@ const CheckoutForm = ({ order }) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://ancient-sierra-92602.herokuapp.com/order/${_id}`, {
+            fetch(`https://manufacturer-website-lea9.onrender.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

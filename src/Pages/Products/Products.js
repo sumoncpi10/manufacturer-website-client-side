@@ -9,7 +9,7 @@ const Products = () => {
     const path = window.location.pathname;
     const [tools, setTools] = useState([]);
     useEffect(() => {
-        fetch('https://ancient-sierra-92602.herokuapp.com/products')
+        fetch('https://manufacturer-website-lea9.onrender.com/products')
             .then(res => res.json())
             .then(data => setTools(data))
 

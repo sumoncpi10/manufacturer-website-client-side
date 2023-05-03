@@ -11,7 +11,7 @@ const Users = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
         if (user) {
-            fetch('https://ancient-sierra-92602.herokuapp.com/user',
+            fetch('https://manufacturer-website-lea9.onrender.com/user',
                 {
                     method: 'GET',
                     headers: {
@@ -27,7 +27,7 @@ const Users = () => {
 
         }
     }, [user]);
-    // const { data: users, isLoading } = useQuery('users', () => fetch('https://ancient-sierra-92602.herokuapp.com/user').then(res => res.json()));
+    // const { data: users, isLoading } = useQuery('users', () => fetch('https://manufacturer-website-lea9.onrender.com/user').then(res => res.json()));
     // if (isLoading) {
     //     return <Loading></Loading>
     // }
@@ -35,7 +35,7 @@ const Users = () => {
         const proceed = window.confirm('Are You Sure You Want To Delete The Order!');
         console.log(user)
         if (proceed) {
-            fetch(`https://ancient-sierra-92602.herokuapp.com/user/${user._id}`, {
+            fetch(`https://manufacturer-website-lea9.onrender.com/user/${user._id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
