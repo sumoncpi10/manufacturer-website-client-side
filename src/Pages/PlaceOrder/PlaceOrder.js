@@ -21,7 +21,7 @@ const PlaceOrder = () => {
 
     let signInError;
     useEffect(() => {
-        fetch(`https://manufacturer-website-lea9.onrender.com/product/${params.id}`)
+        fetch(`http://localhost:5000/product/${params.id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
@@ -85,7 +85,7 @@ const PlaceOrder = () => {
         const today = new Date(), date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         const order = { email, clientName, productID, productName, address, zipCode, city, country, quantity, price, shipping, img, date };
         console.log(order);
-        fetch('https://manufacturer-website-lea9.onrender.com/addorder', {
+        fetch('http://localhost:5000/addorder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

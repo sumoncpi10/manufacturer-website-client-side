@@ -10,7 +10,7 @@ const Testimonials = () => {
     const path = window.location.pathname;
     useEffect(() => {
         if (path.includes('testimonials')) {
-            fetch(`https://manufacturer-website-lea9.onrender.com/reviewsall`)
+            fetch(`http://localhost:5000/reviewsall`)
                 .then(res => res.json())
                 .then(data => {
                     setReviews(data);
@@ -19,7 +19,7 @@ const Testimonials = () => {
 
         }
         else if (!path.includes('testimonials')) {
-            fetch(`https://manufacturer-website-lea9.onrender.com/reviews`)
+            fetch(`http://localhost:5000/reviews`)
                 .then(res => res.json())
                 .then(data => {
                     setReviews(data);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/ATZ-modified-removebg-preview.png';
+import logo from '../../assets/images/logo mukti.png';
 import auth from '../../firebase.init';
 import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 const Navbar = () => {
@@ -48,7 +48,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">
-                    <img src={logo} alt="ATZ Logo" className='h-10 w10' /> Tools Manufacturing
+                    <img src={logo} alt="ATZ Logo" className='h-12 w12' /> Mukti Power
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">

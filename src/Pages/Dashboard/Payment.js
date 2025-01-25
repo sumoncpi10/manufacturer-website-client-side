@@ -15,7 +15,7 @@ const Payment = () => {
 
     useEffect(() => {
 
-        fetch(`https://manufacturer-website-lea9.onrender.com/order/${id}`)
+        fetch(`http://localhost:5000/order/${id}`)
             .then(res => res.json())
             .then(data => {
                 setOrder(data);

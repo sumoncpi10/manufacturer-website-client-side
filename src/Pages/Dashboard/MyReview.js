@@ -19,7 +19,7 @@ const MyReview = () => {
         // console.log(name, email, password);
         const review = { category, productName, reviewDetails, reviewedBy, userImg };
         // send data to the server 
-        fetch('https://manufacturer-website-lea9.onrender.com/reviewAdd', {
+        fetch('http://localhost:5000/reviewAdd', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

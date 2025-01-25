@@ -13,7 +13,7 @@ const MyOrders = () => {
     const path = window.location.pathname;
     useEffect(() => {
         if (user && path.includes('manageOrder')) {
-            fetch(`https://manufacturer-website-lea9.onrender.com/orders`)
+            fetch(`http://localhost:5000/orders`)
                 .then(res => res.json())
                 .then(data => {
                     setOrders(data);
@@ -22,7 +22,7 @@ const MyOrders = () => {
 
         }
         else if (user && !path.includes('manageOrder')) {
-            fetch(`https://manufacturer-website-lea9.onrender.com/order?email=${user?.email}`)
+            fetch(`http://localhost:5000/order?email=${user?.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setOrders(data);
@@ -34,7 +34,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are You Sure You Want To Delete The Order!');
         // console.log(order)
         if (proceed) {
-            fetch(`https://manufacturer-website-lea9.onrender.com/order/${order._id}`, {
+            fetch(`http://localhost:5000/order/${order._id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -50,7 +50,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are You Sure You Want To Delete The Order!');
         console.log(order)
         // if (proceed) {
-        //     fetch(`https://manufacturer-website-lea9.onrender.com/order/${order._id}`, {
+        //     fetch(`http://localhost:5000/order/${order._id}`, {
         //         method: 'DELETE'
         //     })
         //         .then(res => res.json())
@@ -65,7 +65,7 @@ const MyOrders = () => {
             order: order?._id,
             // transactionId: paymentIntent.id
         }
-        fetch(`https://manufacturer-website-lea9.onrender.com/delivered/${order?._id}`, {
+        fetch(`http://localhost:5000/delivered/${order?._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

@@ -20,7 +20,7 @@ const ProductAdd = () => {
         // console.log(name, email, password);
         const product = { name, brand, price, quantity, minquantity, img, description, supplier, category };
         // send data to the server 
-        fetch('https://manufacturer-website-lea9.onrender.com/productAdd', {
+        fetch('http://localhost:5000/productAdd', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
