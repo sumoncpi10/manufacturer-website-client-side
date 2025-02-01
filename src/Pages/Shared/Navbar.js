@@ -27,8 +27,9 @@ const Navbar = () => {
         <li><Link to='/business'>Business</Link></li>
         {/* <li><Link to='/contact'>Contact</Link></li> */}
         <li><Link to='/about'>About</Link></li>
-        <li><Link to='/portfolio'>My Portfolio</Link></li>
-        <li><Link to='/blogs'>Blogs</Link></li>
+        <li><Link to='/official'>Officials</Link></li>
+        <li><Link to='/contact'>Contact</Link></li>
+        {/* <li><Link to='/blogs'>Blogs</Link></li> */}
     </>;
 
     const logout = () => {

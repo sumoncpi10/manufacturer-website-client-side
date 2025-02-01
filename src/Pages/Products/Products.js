@@ -11,8 +11,9 @@ const Products = () => {
         fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setTools(data))
-        // .catch(error => console.error('Error fetching products:', error));
-    }, []);
+            .catch(error => console.error('Error fetching products:', error));
+    }, []); // Empty dependency array ensures this runs only once
+
 
     return (
         <div className="px-12">

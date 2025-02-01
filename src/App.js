@@ -23,6 +23,8 @@ import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Testimonials from './Pages/Home/Testimonials';
 import Footer from './Pages/Shared/Footer';
 import Business from './Pages/Business/Business';
+import Officials from './Pages/Officials/Officials';
+import Contact from './Pages/Contact/Contact';
 function App() {
   return (
     <div >
@@ -50,9 +52,10 @@ function App() {
         </Route>
         <Route path='/testimonials' element={<Testimonials />}></Route>
         <Route path='/business' element={<Business />}></Route>
-        <Route path='/blogs' element={<Blogs />}></Route>
+        <Route path='/contact' element={<Contact />}></Route>
+        {/* <Route path='/blogs' element={<Blogs />}></Route> */}
         <Route path='/about' element={<About />}></Route>
-        <Route path='/portfolio' element={<MyPortfolio />}></Route>
+        <Route path='/official' element={<Officials />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>

@@ -4,7 +4,7 @@ import './Blogs.css'
 const Blog = () => {
     return (
         <div>
-            <div className="hero ">
+            {/* <div className="hero ">
                 <div className="hero-content text-center">
                     <div className="">
                         <h1 className="text-5xl font-bold">How will you improve the performance of a React Application?</h1>
@@ -15,7 +15,7 @@ const Blog = () => {
                             In React applications, we are guaranteed a very fast UI by default. However, as an application grows, developers may encounter some performance issues.
 
                             In this guide, we will discuss five important ways to optimize the performance of a React application, including pre-optimization techniques.</p>
-                        {/* <button className="btn btn-primary">Get Started</button> */}
+                        <button className="btn btn-primary">Get Started</button>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@ const Blog = () => {
                             Not only are there are a lot of different kinds of state, but there often dozens of ways of managing each kind. Which should you choose?
 
                             In this guide, we will uncover the several kinds of state in your React apps that you might not be aware of, plus how to manage them in the most effective way.</p>
-                        {/* <button className="btn btn-primary">Get Started</button> */}
+                        <button className="btn btn-primary">Get Started</button>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@ const Blog = () => {
                     <div className="">
                         <h1 className="text-5xl font-bold">How does prototypical inheritance work?</h1>
                         <p className="py-6">Every object with its methods and properties contains an internal and hidden property known as [[Prototype]]. The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.</p>
-                        {/* <button className="btn btn-primary">Get Started</button> */}
+                        <button className="btn btn-primary">Get Started</button>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@ const Blog = () => {
                     <div className="">
                         <h1 className="text-5xl font-bold">Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts</h1>
                         <p className="py-6">Each time you call setItems you would have to pass it a new array if you want to render. If you mutate the same array then the equality checks that react does to see if things have changed will always tell that array hasn't changed so no rendering will take place.</p>
-                        {/* <button className="btn btn-primary">Get Started</button> */}
+                        <button className="btn btn-primary">Get Started</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@ const Blog = () => {
                             For example, “How can I get the product SKU“? Or “How can I get the product short description“? Or maybe the product stock level, shipping class, tax class, price, regular price, sale price, and so on… hopefully this article will save you time.
 
                             Of course, not always you have access to the $product variable (I’m talking about WooCommerce hooks for example), so you’re also required to understand your case scenario and see if you can “get” that $product object in another way.</p>
-                        {/* <button className="btn btn-primary">Get Started</button> */}
+                        <button className="btn btn-primary">Get Started</button>
                     </div>
                 </div>
             </div>
@@ -71,10 +71,10 @@ const Blog = () => {
                             UNIT TESTING is a type of software testing where individual units or components of a software are tested. The purpose is to validate that each unit of the software code performs as expected. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness. A unit may be an individual function, method, procedure, module, or object.</p>
                         <p className="py-6">
                             Unit testing allows software developers to actually think through the design of the software and what has to be done before they write the code. This can help them to stay focused and can also help them to create much better designs.</p>
-                        {/* <button className="btn btn-primary">Get Started</button> */}
+                        <button className="btn btn-primary">Get Started</button>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
 

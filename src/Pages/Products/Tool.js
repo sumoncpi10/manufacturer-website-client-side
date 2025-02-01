@@ -13,6 +13,7 @@ const Tool = ({ tool }) => {
     return (
         <div className="card card-compact max-w-lg bg-base-100 shadow-xl">
             <figure>
+
                 <img
                     src={img || '/placeholder.jpg'}  // Use the dynamic img URL or fallback to placeholder
                     alt={name || 'Product'}
@@ -24,7 +25,7 @@ const Tool = ({ tool }) => {
                 <h2 className="card-title" title={name}>
                     {name?.length > 30 ? name.slice(0, 30) + '...' : name}
                 </h2>
-                <p className="text-2xl">${price}</p>
+                <p className="text-2xl">৳{price}</p>
                 <p className="text-1xl">
                     <span className="text-red-500">Min Quantity:</span> {minquantity}
                 </p>
