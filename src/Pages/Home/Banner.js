@@ -4,7 +4,18 @@ import cuttingTools from '../../assets/images/cutting-tools.jpg'
 // import bgChair from '../../assets/images/bg.png';
 const Banner = () => {
     return (
-
+        // <div className="hero min-h-screen" style={{
+        //     background: `url(${bgChair})`
+        // }}>
+        //     <div className="hero-content flex-col lg:flex-row-reverse">
+        //         <img src={chair} className="max-w-sm rounded-lg shadow-2xl" />
+        //         <div>
+        //             <h1 className="text-5xl font-bold">Box Office News!</h1>
+        //             <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        //             <PrimaryButton>Get Started</PrimaryButton>
+        //         </div>
+        //     </div>
+        // </div>
         <div>
             <div className="carousel w-full">
                 <div id="item1" className="carousel-item w-full">

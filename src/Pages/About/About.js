@@ -12,11 +12,9 @@ const About = () => {
                             src="https://www.abpowerbd.com/images/electrical-solution-provider.webp"
                             class="max-w-sm rounded-lg shadow-2xl" />
                         <div>
-                            <h1 class="text-5xl font-bold">Electricity Power solution company in Bangladesh!</h1>
+                            <h1 class="text-5xl font-bold">Mukti Power Private Ltd company in Bangladesh!</h1>
                             <p class="py-6">
-                                AB Power Engineering Ltd. is a leading electricity power solution company in Bangladesh, providing top-quality substations, Switch Gear, Power Generators, and Power Transformers, and reliable service & solutions for industries & businesses. With a legacy of excellence spanning over five decades, we stand as a cornerstone in power solutions.
-
-                                Since 1969, with a rich history of reliability and expertise, we've been dedicated to providing dependable power solutions for industries and businesses nationwide as part of the AB Power Group of Companies. Trust us for unparalleled expertise and service in power solutions.
+                                Mukti Power Private Ltd came into existence with the objective of ensuring safe power supply and self-employment by supplying quality equipment to the power sector of the country. For this purpose, some committed and experienced technical know-how has been laid for release by coordinating the entire management. It is an established fact that we are determined not to deviate from the standard of supply equipment as we seek to create employment. That is why we have established business relationships with European and Chinese high-quality companies from the very beginning. On the other hand, in order to establish communication with our employees from all parts of the country, the door will be open to everyone so that everyone can participate in the company. Our honesty, devotion and service mentality is the only way for us to go so that all the customers of the country as well as the power sector get better service.
                             </p>
                             <button class="btn btn-primary">Get Started</button>
                         </div>

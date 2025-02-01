@@ -25,10 +25,10 @@ const Tool = ({ tool }) => {
                 <h2 className="card-title" title={name}>
                     {name?.length > 30 ? name.slice(0, 30) + '...' : name}
                 </h2>
-                <p className="text-2xl">৳{price}</p>
+                {/* <p className="text-2xl">৳{price}</p>
                 <p className="text-1xl">
                     <span className="text-red-500">Min Quantity:</span> {minquantity}
-                </p>
+                </p> */}
                 <p className="text-1xl">
                     <span className="text-indigo-500">Available Quantity:</span> {quantity}
                 </p>
@@ -37,9 +37,9 @@ const Tool = ({ tool }) => {
                         {description?.length > 70 ? description.slice(0, 70) + '...' : description}
                     </small>
                 </p>
-                <div className="card-actions justify-end">
+                {/* <div className="card-actions justify-end">
                     <button className="btn btn-primary" onClick={navigateToDetail}>Buy Now</button>
-                </div>
+                </div> */}
             </div>
         </div>
     );

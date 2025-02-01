@@ -51,7 +51,7 @@ const Products = () => {
                         <Tool key={tool._id} tool={tool} />
                     ))}
                     {path === '/products' ? null : (
-                        tools.length > 12 && (
+                        tools?.length > 12 && (
                             <Link to="/products">
                                 <button type="button" className="btn btn-dark m-4 btn-show">
                                     Show More
